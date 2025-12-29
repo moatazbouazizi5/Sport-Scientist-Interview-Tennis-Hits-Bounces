@@ -49,7 +49,7 @@ ROLANDGARROS_TRACKING/
 ├── visualize_physics.py     # Visualization tool for Method 1
 ├── visualize_supervised.py  # Visualization tool for Method 2
 └── requirements.txt         # Dependencies
-´´´
+```
 
 ## 📊 Performance & Results
 
@@ -86,5 +86,6 @@ A Gradient Boosting approach (XGBoost) trained on ~420,000 frames.
 *   **Post-Processing:**
     *   **NMS (Non-Maximum Suppression):** Clusters nearby detections and keeps only the highest probability candidate.
     *   **Physical Filters:** Rejects bounces occurring in the sky (Y-axis threshold).
+
 
 
