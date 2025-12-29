@@ -1,0 +1,27 @@
+
+paths:
+  raw_data: "data/raw"
+  processed_data: "data/processed" 
+  physics_output: "data/predictions/physics.json"     
+  supervised_output: "data/predictions/supervised.json" 
+  model_save: "models/tennis_classifier.joblib"       
+
+smoothing:
+  window_length: 5
+  poly_order: 2
+
+physics_thresholds:
+  bounce_accel: -0.5
+  hit_accel: 1.5
+  hit_min_height_ratio: 0.95
+
+model_params:
+  n_estimators: 200
+  max_depth: 6
+  learning_rate: 0.1
+  scale_pos_weight: 1    # Pour gérer le déséquilibre de classes
+
+
+post_processing:
+  min_gap: 8 # Pour la NMS
+  

@@ -1,0 +1,30 @@
+# --- Python & Environment ---
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+venv/
+env/
+.env
+
+# --- IDE Settings (VS Code, JetBrains) ---
+.vscode/
+.idea/
+
+
+# --- Models (Binary/Large files) ---
+
+# --- Logs & Outputs ---
+*.log
+run_output.txt
+
+# --- Visualizations (Generated images) ---
+*.png
+*.jpg
+*.svg
+plot_physics.png
+plot_supervised.png
+
+# --- OS System Files ---
+.DS_Store
+Thumbs.db
