@@ -59,57 +59,23 @@ Air	96%	0.98	33,721
 Hit	93% 🚀	0.43	307
 Bounce	95% 🚀	0.43	272
 Note: Precision is traded for Recall. It is better to detect a false positive (which can be filtered later) than to miss a match-winning point.
-🧠 Methodologies
+## 🧠 Methodologies
+
 This repository implements two distinct approaches:
-1. Unsupervised Method (Physics)
+
+### 1. Unsupervised Method (Physics)
 A baseline approach using kinematic rules without training data.
-Bounce: Detects local maxima in the Y-axis (lowest point in image) combined with vertical acceleration inversion.
-Hit: Detects spikes in total acceleration magnitude (
-a
-m
-a
-g
-a 
-mag
-​
- 
-), excluding zones near the ground.
-2. Supervised Method (Machine Learning) - Recommended
+*   **Bounce:** Detects local maxima in the Y-axis (lowest point in image) combined with vertical acceleration inversion.
+*   **Hit:** Detects spikes in total acceleration magnitude ($a_{mag}$), excluding zones near the ground.
+
+### 2. Supervised Method (Machine Learning) - *Recommended*
 A Gradient Boosting approach (XGBoost) trained on ~420,000 frames.
-Preprocessing: Linear interpolation for missing data + Savitzky-Golay filtering (window=5, poly=2) to smooth noise.
-Feature Engineering:
-Context: Lag/Lead features (t-5 to t+5) to see the trajectory shape.
-Dynamics: Calculation of Jerk (derivative of acceleration) and Local Z-Scores to normalize impacts regardless of ball speed.
-Post-Processing:
-NMS (Non-Maximum Suppression): Clusters nearby detections and keeps only the highest probability candidate.
-Physical Filters: Rejects bounces occurring in the sky (Y-axis threshold).
-🚀 Installation & Usage
-1. Setup Environment
-code
-Bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/tennis-event-detection.git
-cd tennis-event-detection
 
-# Create virtual env (optional but recommended)
-python -m venv venv
-# Activate it (Windows: venv\Scripts\activate | Mac/Linux: source venv/bin/activate)
+*   **Preprocessing:** Linear interpolation for missing data + Savitzky-Golay filtering (window=5, poly=2) to smooth noise.
+*   **Feature Engineering:**
+    *   **Context:** Lag/Lead features (t-5 to t+5) to see the trajectory shape.
+    *   **Dynamics:** Calculation of **Jerk** (derivative of acceleration) and **Local Z-Scores** to normalize impacts regardless of ball speed.
+*   **Post-Processing:**
+    *   **NMS (Non-Maximum Suppression):** Clusters nearby detections and keeps only the highest probability candidate.
+    *   **Physical Filters:** Rejects bounces occurring in the sky (Y-axis threshold).
 
-# Install requirements
-pip install -r requirements.txt
-2. Run the Pipeline
-The main.py script handles data loading, preprocessing, training, and inference.
-code
-Bash
-# Run both Physics and ML methods
-python main.py --method both
-
-# Run only the Machine Learning pipeline
-python main.py --method ml
-3. Visualize Results
-Generate plots to verify the quality of detection on specific points.
-code
-Bash
-python visualize_supervised.py comment mettre ca dans le readme  de manieere presnetable 
-
-This will generate plot_supervised.png showing the ball trajectory with detected Hits and Bounces.
