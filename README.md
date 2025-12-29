@@ -51,7 +51,7 @@ ROLANDGARROS_TRACKING/
 └── requirements.txt         # Dependencies
 
 
-📊 Performance & Results
+## 📊 Performance & Results
 We prioritize Recall to ensure no game event is missed. The model handles the 1:100 class imbalance using weighted sampling (sample_weight='balanced') and dynamic threshold optimization.
 Test Set Results (63 unseen points):
 Class	Recall (Capture Rate)	F1-Score	Support
@@ -59,7 +59,9 @@ Air	96%	0.98	33,721
 Hit	93% 🚀	0.43	307
 Bounce	95% 🚀	0.43	272
 Note: Precision is traded for Recall. It is better to detect a false positive (which can be filtered later) than to miss a match-winning point.
-## 🧠 Methodologies
+---
+## 🧠 
+
 
 This repository implements two distinct approaches:
 
@@ -78,4 +80,5 @@ A Gradient Boosting approach (XGBoost) trained on ~420,000 frames.
 *   **Post-Processing:**
     *   **NMS (Non-Maximum Suppression):** Clusters nearby detections and keeps only the highest probability candidate.
     *   **Physical Filters:** Rejects bounces occurring in the sky (Y-axis threshold).
+
 
