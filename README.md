@@ -110,6 +110,20 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+```
+
+### 2. Run the Analysis
+The main.py script serves as the single entry point for the pipeline. It handles data loading, preprocessing, training, and inference.
+```bash
+# Run the complete pipeline (Physics + Machine Learning)
+python main.py --method both
+
+# Run only the Machine Learning pipeline (Faster if already trained)
+python main.py --method ml
+
+# Run only the Physics baseline
+python main.py --method physics
+```
 
 
 
