@@ -96,8 +96,8 @@ It is recommended to use a virtual environment to keep dependencies clean.
 
 ```bash
 # Clone the repository
-git clone https://github.com/YOUR_USERNAME/tennis-event-detection.git
-cd tennis-event-detection
+git clone https://github.com/moatazbouazizi5/Sport-Scientist-Interview-Tennis-Hits-Bounces.git
+cd Sport-Scientist-Interview-Tennis-Hits-Bounces
 
 # Create virtual env
 # Windows:
@@ -110,5 +110,6 @@ source venv/bin/activate
 
 # Install dependencies
 pip install -r requirements.txt
+
 
 
