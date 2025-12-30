@@ -87,5 +87,28 @@ A Gradient Boosting approach (XGBoost) trained on ~420,000 frames.
     *   **NMS (Non-Maximum Suppression):** Clusters nearby detections and keeps only the highest probability candidate.
     *   **Physical Filters:** Rejects bounces occurring in the sky (Y-axis threshold).
 
+---
+
+## 🚀 Installation & Usage
+
+### 1. Setup Environment
+It is recommended to use a virtual environment to keep dependencies clean.
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/tennis-event-detection.git
+cd tennis-event-detection
+
+# Create virtual env
+# Windows:
+python -m venv venv
+.\venv\Scripts\activate
+
+# Mac/Linux:
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
 
 
