@@ -125,5 +125,12 @@ python main.py --method ml
 python main.py --method physics
 ```
 
-
-
+### 3. Generate Visualizations
+To verify the results visually, use the dedicated plotting scripts. These will generate PNG files in the root directory.
+```bash
+# Visualize the Machine Learning results
+python visualize_supervised.py
+```
+---
+## Author 
+Mouataz Bouazizi
